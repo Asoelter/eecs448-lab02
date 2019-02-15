@@ -1,6 +1,6 @@
 /**
-*	@author 
-*	@date 
+*	@author Adam Soelter
+*	@date	Feb 15, 2019
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
@@ -107,13 +107,25 @@ void LinkedList<T>::addFront(T value)
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
-	Node<T>* lastNode = nullptr;
-	Node<T>* secondintoLast = nullptr;
-	bool isRemoved = false;
+	Node<T>* lastNode		= root_;
+	Node<T>* secondToLast	= nullptr;
+	bool isRemoved			= false;
 
-	/** TODO 
-		Fix this method
-	*/
+	//Fixed
+	if(!isEmpty())
+	{
+		isRemoved = true;
+
+		while(lastNode->getNext() != nullptr)
+		{
+			secondToLast = lastNode;
+			lastNode	 = lastNode->getNext();
+		}
+
+		delete lastNode;
+		secondToLast->setNext(nullptr);
+		--size_;
+	}
 
 	return(isRemoved);
 }	

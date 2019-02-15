@@ -75,6 +75,9 @@ class LinkedList
 	bool removeFront();
 
 	private:
+	//my naming convention is best naming convention :)
+	//changed m_front to root_
+	//changed m_size to size_
 	Node<T>* root_;
 	T size_;
 };
