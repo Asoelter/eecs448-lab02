@@ -75,8 +75,8 @@ class LinkedList
 	bool removeFront();
 
 	private:
-	Node<T>* m_front;
-	T m_size;
+	Node<T>* root_;
+	T size_;
 };
 
 #include "LinkedList.hpp"
