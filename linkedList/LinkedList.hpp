@@ -36,12 +36,22 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-	Node<T>* temp = root_;
-	bool isFound = false;
+	Node<T>* walker = root_;
+	bool isFound	= false;
 
 	/** TODO 
 		Fix this method
 	*/
+	for(int i = 0; i < size_; ++i)
+	{
+		if(walker->getValue() == value)
+		{
+			isFound = true;
+			break;
+		}
+
+		walker = walker->getNext();
+	}
 
 	return(isFound);
 }
